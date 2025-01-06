@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whelmed - Info</title>
+    <link rel="icon" href="logo.jpeg" type="image/jpeg"> <!-- Favicon -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('background.jpg'); /* Use your background image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Home Button */
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Info Content */
+        .info-container {
+            margin-top: 100px;
+            text-align: center;
+            color: #333; /* Dark text for better contrast */
+            font-size: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Light background */
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .info-container img {
+            width: 100%;
+            max-width: 400px; /* Limit image size */
+            border-radius: 10px;
+            margin-bottom: 20px; /* Space between image and text */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .info-container {
+                font-size: 16px;
+            }
+
+            .info-container img {
+                max-width: 100%; /* Make the image responsive */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-button {
+                padding: 8px 16px;
+                font-size: 14px; /* Smaller font for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Button -->
+    <button class="home-button" onclick="window.location.href='Whelmed.html'">Home</button>
+
+    <!-- Info Section -->
+    <div class="info-container">
+        <h1>Welcome to the Whelmed Info Page</h1>
+        <img src="info-image.jpg" alt="Info Image"> <!-- Replace with your image path -->
+        <p>At Whelmed, we are committed to providing free homework help to students who need it most. Our services are available to all school students, regardless of their background or location. We believe that access to education is a fundamental right, and we are here to help students succeed.</p>
+
+        <h2>How We Work:</h2>
+        <ul>
+            <li>We offer free homework help via online sessions and resources.</li>
+            <li>Students can reach out to us for assistance with specific subjects or assignments.</li>
+            <li>We accept donations and school work to support the cause.</li>
+        </ul>
+
+        <h2>Get Involved:</h2>
+        <p>If you're interested in contributing or volunteering, please feel free to contact us.</p>
+    </div>
+
+</body>
+</html>

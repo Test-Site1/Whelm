@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Whelmed</title>
+    <link rel="icon" href="logo.jpeg" type="image/jpeg"> <!-- Favicon -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('background.jpg'); /* Same background */
+            background-size: cover;
+            background-position: center;
+            color: #333; /* Text color for contrast */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            overflow-x: hidden;
+            padding-top: 80px; /* Space for navbar */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar .nav-space {
+            display: flex;
+            align-items: center;
+            margin-right: auto; /* Push other links to the right */
+        }
+
+        .navbar img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .whelmed {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF4500; /* Bright color to stand out */
+            padding: 5px 10px;
+            background-color: rgba(255, 69, 0, 0.1); /* Light background to make it pop */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #007BFF;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #FF4500;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #FF4500; /* Bright accent color */
+            text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 15px 0;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .contact-item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            border-radius: 5px; /* Slight rounding for consistency */
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #FF4500; /* Highlight on hover */
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+                text-align: center;
+            }
+
+            .contact-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .contact-item img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+<div class="navbar">
+    <div class="nav-space">
+        <a href="Whelmed.html">
+            <img src="logo.jpeg" alt="Logo"> <!-- Logo -->
+            <span class="whelmed">Whelmed</span>
+        </a>
+    </div>
+    <a href="Whelmed.html">Home</a> <!-- Link to the homepage -->
+    <a href="blog.html">Blog</a> <!-- Link to the blog page -->
+    <a href="donation.html">Donation</a> <!-- Link to the donation page -->
+    <a href="info.html">Info</a> <!-- Link to the info page -->
+    <a href="Tourism.html">Tourism</a> <!-- Link to the tourism page -->
+    <a href="emergency.html">Emergency Numbers</a> <!-- Link to the emergency numbers page -->
+    <a href="contact.html">Contact</a> <!-- Link to the current contact page -->
+</div>
+
+
+    <!-- Contact Page Content -->
+    <h1>Contact Us</h1>
+    <div class="contact-container">
+        <!-- Instagram -->
+        <div class="contact-item">
+            <img src="instagram.jpg" alt="Instagram Icon">
+            <a href="https://www.instagram.com/yourpage" target="_blank">Instagram</a>
+        </div>
+        <!-- WhatsApp -->
+        <div class="contact-item">
+            <img src="whatsapp.jpg" alt="WhatsApp Icon">
+            <a href="https://wa.me/yourphonenumber" target="_blank">WhatsApp</a>
+        </div>
+        <!-- Facebook -->
+        <div class="contact-item">
+            <img src="facebook.jpg" alt="Facebook Icon">
+            <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a>
+        </div>
+        <!-- Email -->
+        <div class="contact-item">
+            <img src="email.jpg" alt="Email Icon">
+            <a href="mailto:youremail@example.com">Email</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2024 Whelmed. All Rights Reserved.
+    </div>
+</body>
+</html>

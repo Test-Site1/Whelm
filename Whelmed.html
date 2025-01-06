@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whelmed - Supporting Students for Free</title>
+    <link rel="icon" href="logo.jpeg" type="image/jpeg"> <!-- Favicon -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background-color 0.5s ease;
+            overflow-x: hidden;
+            position: relative;
+            height: 100vh; /* Full height for background */
+        }
+
+        /* Logo and Whelmed Text */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .logo-container img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .logo-container .whelmed {
+            font-size: 32px;
+            font-weight: bold;
+            color: #FF4500;
+            border: 2px solid #FF4500; /* Outline with the same color */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Main Bubble Container */
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 120px; /* Margin to push down */
+            overflow: visible; /* Allow inner bubbles to stick out */
+        }
+
+        /* Outer Bubble */
+        .outer-bubble {
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            background-image: url('pngwing.com.png');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: visible; /* Allow bubbles to stick out */
+            z-index: 1;
+        }
+
+        /* Floating Bubbles */
+        .floating-bubble {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .floating-bubble1 { width: 66px; height: 66px; left: 10%; top: 15%; animation-delay: 2s; }
+        .floating-bubble2 { width: 70px; height: 70px; left: 50%; top: 30%; animation-delay: 4s; }
+        .floating-bubble3 { width: 50px; height: 50px; left: 80%; top: 50%; animation-delay: 6s; }
+        .floating-bubble4 { width: 80px; height: 80px; left: 30%; top: 70%; animation-delay: 8s; }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Inner Bubbles */
+        .bubble {
+            background-image: url('pngwing.com.png');
+            background-size: cover;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            position: absolute;
+            text-align: center; /* Center text inside bubbles */
+            padding: 15px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            cursor: pointer;
+            width: 120px;
+            height: 120px;
+        }
+
+        .bubble:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Specific Bubbles with animations */
+        .bubble1 { left: 50%; top: 40%; transform: translate(-50%, -50%); animation: hover 4s ease-in-out infinite; }
+        .bubble2 { left: 70%; top: 60%; transform: translate(-50%, -50%); animation: hover 5s ease-in-out infinite; }
+        .bubble3 { left: 55%; top: 80%; transform: translate(-50%, -50%); animation: hover 6s ease-in-out infinite; }
+        .bubble4 { left: 30%; top: 50%; transform: translate(-50%, -50%); animation: hover 7s ease-in-out infinite; }
+        .bubble5 { left: 20%; top: 35%; transform: translate(-50%, -50%); animation: hover 8s ease-in-out infinite; }
+        .bubble6 { left: 40%; top: 70%; transform: translate(-50%, -50%); animation: hover 9s ease-in-out infinite; }
+        .bubble7 { left: 60%; top: 20%; transform: translate(-50%, -50%); animation: hover 10s ease-in-out infinite; }
+
+        @keyframes hover {
+            0% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-10px); }
+            100% { transform: translate(-50%, -50%) translateY(0); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            .outer-bubble {
+                width: 90vw; /* Increased size for mobile */
+                height: 90vw; /* Increased size for mobile */
+            }
+
+            .bubble {
+                width: 100px; /* Reduced bubble size */
+                height: 100px; /* Reduced bubble size */
+            }
+
+            /* Adjust positions to avoid excessive overlap and let them stick out slightly */
+            .bubble1 { left: 50%; top: 30%; transform: translate(-50%, -50%); }
+            .bubble2 { left: 75%; top: 50%; transform: translate(-50%, -50%); }
+            .bubble3 { left: 40%; top: 70%; transform: translate(-50%, -50%); }
+            .bubble4 { left: 15%; top: 55%; transform: translate(-50%, -50%); }
+            .bubble5 { left: 60%; top: 75%; transform: translate(-50%, -50%); }
+            .bubble6 { left: 80%; top: 25%; transform: translate(-50%, -50%); }
+            .bubble7 { left: 25%; top: 20%; transform: translate(-50%, -50%); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo and Whelmed Text -->
+    <div class="logo-container">
+        <img src="logo.jpeg" alt="Logo">
+        <span class="whelmed">Whelmed</span>
+    </div>
+
+    <!-- Bubble Container -->
+    <div class="container">
+        <div class="outer-bubble">
+            <!-- Floating Background Bubbles -->
+            <div class="floating-bubble floating-bubble1"></div>
+            <div class="floating-bubble floating-bubble2"></div>
+            <div class="floating-bubble floating-bubble3"></div>
+            <div class="floating-bubble floating-bubble4"></div>
+
+            <!-- Inner Bubbles -->
+            <div class="bubble bubble1" onclick="window.location.href='https://www.facebook.com/groups/213079185498534';">Staan saam</div>
+            <div class="bubble bubble2" onclick="location.href='donation.html';">Donate</div>
+            <div class="bubble bubble3" onclick="location.href='info.html';">Info</div>
+            <div class="bubble bubble4" onclick="window.location.href='Tourism.html';">Tourism</div>
+            <div class="bubble bubble5" onclick="location.href='emergency.html';">Emergency Numbers</div>
+            <div class="bubble bubble6" onclick="location.href='blog.html';">Latest Blogs</div>
+            <div class="bubble bubble7" onclick="window.location.href='contact.html';">Contact</div>
+        </div>
+    </div>
+</body>
+</html>

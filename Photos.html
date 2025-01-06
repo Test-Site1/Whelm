@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            opacity: 1;
+            transition: opacity 0.8s ease;
+        }
+
+        /* Home button */
+        .home-button {
+            background-color: #007BFF;
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 100px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 3 / 2;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bubble-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 800px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .bubble-section h2 {
+            color: #555;
+        }
+
+        .bubble-section p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Fullscreen Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .overlay .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        /* Floating bubbles */
+        .bubble {
+            position: absolute;
+            background-image: url('pngwing.com.png');
+            background-size: cover;
+            background-position: center;
+            animation: bubbleAnimation 15s infinite ease-in-out;
+        }
+
+        .bubble1 { width: 120px; height: 120px; top: 20%; left: 10%; animation-duration: 12s; }
+        .bubble2 { width: 80px; height: 80px; top: 40%; left: 70%; animation-duration: 15s; }
+        .bubble3 { width: 150px; height: 150px; top: 60%; left: 25%; animation-duration: 18s; }
+        .bubble4 { width: 100px; height: 100px; top: 10%; right: 15%; animation-duration: 20s; }
+        .bubble5 { width: 90px; height: 90px; top: 30%; left: 85%; animation-duration: 14s; }
+        .bubble6 { width: 110px; height: 110px; top: 50%; right: 5%; animation-duration: 16s; }
+        .bubble7 { width: 70px; height: 70px; top: 70%; left: 50%; animation-duration: 13s; }
+        .bubble8 { width: 130px; height: 130px; top: 20%; left: 40%; animation-duration: 19s; }
+        .bubble9 { width: 160px; height: 160px; top: 80%; left: 30%; animation-duration: 17s; }
+        .bubble10 { width: 140px; height: 140px; top: 10%; right: 30%; animation-duration: 21s; }
+
+        @keyframes bubbleAnimation {
+            0% { transform: translateY(0); opacity: 0.6; }
+            50% { transform: translateY(-50px); opacity: 0.9; }
+            100% { transform: translateY(0); opacity: 0.6; }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .bubble-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home button -->
+    <button class="home-button" onclick="window.location.href='index.html'">Go to Home</button>
+
+    <!-- Floating Bubbles -->
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+    <div class="bubble bubble5"></div>
+    <div class="bubble bubble6"></div>
+    <div class="bubble bubble7"></div>
+    <div class="bubble bubble8"></div>
+    <div class="bubble bubble9"></div>
+    <div class="bubble bubble10"></div>
+
+    <h1>Photo Gallery</h1>
+    <div class="gallery">
+        <img src="photo1.jpg" alt="Photo 1" onclick="openOverlay(this)">
+        <img src="photo2.jpg" alt="Photo 2" onclick="openOverlay(this)">
+        <img src="photo3.jpg" alt="Photo 3" onclick="openOverlay(this)">
+        <img src="photo4.jpg" alt="Photo 4" onclick="openOverlay(this)">
+        <img src="photo5.jpg" alt="Photo 5" onclick="openOverlay(this)">
+        <img src="photo6.jpg" alt="Photo 6" onclick="openOverlay(this)">
+        <img src="photo7.jpg" alt="Photo 7" onclick="openOverlay(this)">
+        <img src="photo8.jpg" alt="Photo 8" onclick="openOverlay(this)">
+        <img src="photo9.jpg" alt="Photo 9" onclick="openOverlay(this)">
+        <img src="photo10.jpg" alt="Photo 10" onclick="openOverlay(this)">
+        <img src="photo11.jpg" alt="Photo 11" onclick="openOverlay(this)">
+        <img src="photo12.jpg" alt="Photo 12" onclick="openOverlay(this)">
+        <img src="photo13.jpg" alt="Photo 13" onclick="openOverlay(this)">
+    </div>
+
+    <div class="bubble-section">
+        <h2>The Whelmbulance: Education on the Move</h2>
+        <p>The <strong>Whelmbulance</strong> is a mobile education unit dedicated to bringing learning opportunities directly to children across South Africa. We drive to schools, communities, and rural areas, equipping kids with essential knowledge and skills.</p>
+        <p>Our mission is to ensure every child, no matter where they live, has access to quality education and the tools they need to thrive. Whether it’s helping with homework, introducing new subjects, or sparking curiosity, the Whelmbulance is committed to teaching and inspiring kids on the go.</p>
+        <p>Together, we’re making education accessible and empowering the next generation, one mile at a time.</p>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <span class="close" onclick="closeOverlay()">&times;</span>
+        <img id="overlayImage" src="" alt="Fullscreen Photo">
+    </div>
+
+    <script>
+        function openOverlay(image) {
+            const overlay = document.getElementById('overlay');
+            const overlayImage = document.getElementById('overlayImage');
+            overlayImage.src = image.src;
+            overlay.style.display = 'flex';
+        }
+
+        function closeOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
